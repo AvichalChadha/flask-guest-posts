@@ -1,0 +1,115 @@
+{% extends "file.html" %}
+			{% block body %}
+
+<div style = " font-style: Courier New ; font-size : 22px " ></div>
+
+
+                  <h1> <b>End to End Encryption </b></h1>
+
+<img src="static/end_to_end_encryption/final.png" class="img-fluid" style="width:800px;height:500px; padding-top:40px; padding-bottom:40px ">
+
+<p>Keeping you text messages protected from the evesdropper had been a  major issue for the companies like WhatsApp, Facebook Messenger and Apple on iMessages. If this is not enough, the government  can show up anytime on their footsteps, asking  the access to the user database, claiming they need  to investigate terrorists and criminals. Hence there is a strong need to have a system in place that guarantees user’s privacy.<br><br>
+
+There are two ways we can go about trying to do so -<br>
+
+<ul>
+<li><b>Symmetric Key Encryption</b></li>
+<li><b>End to End Encryption</b></li>
+</ul></p>
+
+<h2><b>Symmetric Key Encryption</b> </h2>
+
+<p>This is one of the way to go about encrypting the user data. This was the one used before end to end encryption became popular. In Symmetric Key Encryption,  the server gives every user a unique key. Let us say I am Bob and the key given by server is<b> K<sub>12</sub></b>. And I want to text Alice who has a different key, say <b>K<sub>13</sub></b>. </p>
+
+<b>Bob:</b>    ** Sends message to Alice encrypting it with key,<b> K<sub>12</sub></b>, and then sends it to the  server   ** <br>
+
+<b>Server:</b>  ** He then decrypts the message, read it, and then encrypts it with Alice’s key,<b> K<sub>13</sub></b>, and then sends the message to Alice.  ** <br>
+
+<b>Alice:</b> ** Alice then receives the message, decrypts it and reads it.  **  <br>
+<br>
+
+This is secure to some extent. As even if the attacker tries capturing the data, it will all be encrypted and what he will be seeing is noise. The problem is, when the server is sending his public key to the user, the network is not secure and anyone can perform <b>man in the middle attack</b> and get hold of the keys.
+If the server gets hacked then all your text messages, photos and videos will be dumped out on the dark web. And that is some serious money, they get after selling that data. 
+
+<h2><b>End to End Encryption</b> </h2>
+
+End to End encryption works on the public key cryptography. I have covered it on Boot Up the Geek, you can <a>check it here.</a> It is a long topic by itself, but I will try giving you a gist of it.
+
+<b>In public key cryptography, we create two pairs of keys, one is a public key and the other one is a private key. The files that you encrypt with your public key can only be decrypted only with your private key because “maths”. </b>
+
+Let us take an example here of Bob and Alice. Like before, Bob tries contacting with Alice but this time using End to End Encryption 
+
+Bob and Alice both create a pair of these keys and send their public key to one another. <b>Then they use the private keys in secret to create a shared key and then  use that key to communicate with each other. You generate a shared key in every message you send. </b> 
+
+Now even if the server gets hacked, all the data is encrypted and the server doesn’t have the keys, as it shared between the users and the server doesn’t even have a clue. 
+
+<h2><b>Vulnerabilities in End to End Encryption</b> </h2>
+
+As discussed above, there is nothing the hacker can achieve, if he tries getting into the server.<b> Thus the only thing that is vulnerable are the endpoints, i.e the user’s phones.</b> He can place the bug in the phone to read the messages. 
+
+
+<h2><b>Conclusion </b></h2>
+
+Many companies brag about their user’s privacy, but it all boils down to who has the keys. Many companies who provide its users with end to end encryption, sometimes leaves the backdoor in the name of so called<b> “security reasons”</b>. Most of the time it is the government who is forcing them to do that. Most of the times, that backdoor is caught by the hacker and is abused. 
+<br><br>
+<p><i>
+Thank you guys for sticking around, I hope you liked it and gained something informative. If you have some doubts or you want to share something with us, comment down below. I will be glad to answer them. <br>
+Stay free and browse safe! 
+
+</i>
+</p>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

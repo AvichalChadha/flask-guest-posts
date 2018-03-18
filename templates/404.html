@@ -1,0 +1,15 @@
+{% extends "file.html" %}
+{% block body %}
+
+<div align = center >
+<img style=" margin-top: -12px; margin-buttom:30px" class="img-fluid" src="{{ url_for('static', filename='404.jpg') }}">
+
+<br>
+<br>
+<h1>
+<a href= "{{ url_for('index') }}"> Go Back ! </a>
+</h1>
+</div>
+<br><br><br><br><br><br>
+
+{% endblock %}

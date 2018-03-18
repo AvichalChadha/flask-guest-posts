@@ -1,0 +1,188 @@
+{% extends "bootstrap/base.html" %}  
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+{% block title %}
+Guest posts form
+{% endblock %}
+
+{% block styles %}
+
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href={{ url_for('static', filename="assets/css/main.css") }} />
+		
+{% endblock %}
+
+{% block content %}
+<header id="header">
+    <div class="inner">
+        <a href= "#" class="logo">Boot Up the Geek</a>
+        <nav id="nav">
+            
+            <a href= "#">linux</a>
+            <a href= "#">Android</a>
+            <a href= "#">Cyber Security</a>
+            <a href= "#">tech News</a>
+            <a href= "#">User Posts</a>
+            <a href= "#">Submit Posts</a>
+        </nav>
+        
+    </div>
+</header>
+<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+
+
+
+
+
+<!-- Main -->
+<section id="main" >
+    <div class="inner">
+        <header class="major special">
+                <div  class="row">
+                        <div class="col-md-9">
+   
+        <h1>Got an idea? Communitse!  </h1>
+        <form method="POST" action="/form">
+            {{ form.csrf_token }}
+            <div class="row">
+                    <div class="col-lg-6">
+                        <dl>
+                {{ wtf.form_field(form.title) }}
+                
+                {{ wtf.form_field(form.email) }}
+                </dl>
+            </div>
+            <div class="col-lg-6">
+                {{ wtf.form_field(form.url) }}
+                {{ wtf.form_field(form.author) }}
+            </div>
+            </div>
+            
+            <dl>
+                {{ wtf.form_field(form.description) }}
+                {{ wtf.form_field(form.post) }}
+                {{ wtf.form_field(form.AuthorDescription) }}
+            </dl>
+            <p> Don't forget to add your blog's link in the author's description if you have any!  </p>
+            <input class="btn btn-primary" type="submit" value="Submit">
+        </form>
+
+
+</div>
+	
+	
+<div class="col-md-3" >  
+    <div style= "padding:30px; font-size : 16px">
+    
+            <h4><b>Also from Boot Up the Geek </b></h4>
+               <a href= "#" > 
+               <ul>
+               <li>	Why has rooting become less popular over the years?</li>
+               </a>
+               <br>   
+               <a href= "#"> 
+               <li>	Cookies -Part 1 (Introduction to Cookies)</li>
+               </a>
+               <br>  
+            <a href= "#"> 
+               <li>	End to End Encryption</li>
+            </a>
+            <br>
+            <a href= "#"> 
+               <li>	My Experience with different Desktop Environment</li>
+            </a>
+            <br> 
+            <a href= "#"> 
+               <li>		Should You Install Kali Linux as a Beginner ?</li>
+            </a>
+            <br>  
+            <a href= "#"> 
+                <li>	Beginner’s guide to install Linux – VirtualBox vs DualBoot</li>
+            </a>
+            <br>
+            <a href= "#"> 
+               <li>	Is your Phone Hacked?</li>
+            </a>
+            <br>
+            <a href= "#"> 
+               <li>		Public Key Cryptography</li>
+            </a>
+            <br>           
+            <a href= "#"> 
+               <li>	Check if your wireless card supports monitor mode for Aircrack-ng and Wireshark?  </li>
+            </a>
+            <br>
+               
+        </div>
+        </div>
+    </div>
+    </div>
+</header>
+</section>
+
+     
+
+
+
+
+
+
+
+
+<!-- Footer -->
+<section id="footer">
+    <div class="inner">
+        <header align = center>
+            <h2>You've reached the end!</h2>
+        </header>
+                   <div class="row" id = "color_footer">
+  
+    <div class="col-md-6" >
+
+
+    <ul>
+      
+       <b><li><div class="grey-text text-lighten-3" >Contact: bootupthegeek@gmail.com</div></li></b>
+        <b> <li><a class="grey-text text-lighten-3" href="#">Disclamer</a></li></b>
+    </ul>
+  </div>
+ <div class="col-md-6" >
+    
+    <ul>
+      <b><li><a class="grey-text text-lighten-3" href="#">Site Map</a></li></b>
+      <b><li><a class="grey-text text-lighten-3" href="#">Privacy Policy</a></li></b>
+
+    </ul>
+  </div>
+</div>
+               <div class="footer-copyright">
+<div align= left>
+<b> ©COPYRIGHT 2017 Boot Up the Geek </b>
+
+</div>
+</div>
+    </div>
+</section>
+
+
+
+{% block scripts %}
+{{super()}}
+
+<script src="//cdn.ckeditor.com/4.8.0/standard/ckeditor.js"></script>
+<script>CKEDITOR.replace( 'post' );</script>
+<script>CKEDITOR.replace( 'AuthorDescription' );</script>
+<script src="static/assets/js/jquery.min.js"></script>
+<script src="static/assets/js/skel.min.js"></script>
+<script src="static/assets/js/util.js"></script>
+<script src="static/assets/js/main.js"></script>
+
+{% endblock %}
+
+
+
+{% endblock %}

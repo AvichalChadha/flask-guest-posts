@@ -1,0 +1,23 @@
+{% extends "file2.html" %}
+			{% block body %}
+
+<div >
+	<h1 align= "center"> Greetings Sir! </h1>
+	<br><br><br><br>
+	
+	<h3><a style="color:#e5474b;" href= "{{ url_for('form') }}"> Click here </a> to visit the guest post form.
+	<br><br>
+
+		<a  style="color:#e5474b;"  href= "{{ url_for('submitted_posts') }}">Click here </a>to visit the webpage that gets rendered with the details you fill in the above form.
+	<br><br>
+
+	 <h3><a style="color:#e5474b;" href= "{{ url_for('encryption') }}"> Click here </a> to see a sample article.
+         </h3>
+	
+
+
+
+	
+</div>
+
+{% endblock %}
